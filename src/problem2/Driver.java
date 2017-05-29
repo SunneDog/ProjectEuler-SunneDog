@@ -4,7 +4,7 @@ public class Driver {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int n = 0; int total = 0;
+		int n = 1; int total = 0;
 		int fibN = 0;
 		System.out.println("Find the sum of all even-numbered values in a Fibonacci sequence that does not exceed four million.");
 		fibN = fib(n);
@@ -17,20 +17,15 @@ public class Driver {
 		System.out.println(total);
 	}
 	/*
-	 * Need to fix the fibonacci method
-	 * maybe avoid recursion?
+	 * Solution found at: http://www.geeksforgeeks.org/program-for-nth-fibonacci-number/
+	 * Was on the wrong track with the solution for the method.
 	 */
 	private static int fib(int n) {
 		int result = 0;
-		if(n == 0) {
-			result = 1;
-		} else if(n == 1) {
-			result = 2;
-		} else if(n == 2) {
-			result = 3;
-		} else
-			result = fib(n - 2) + fib(n - 1);
-		System.out.println(result);
+		if(n <= 1) 
+			result = n;
+		else
+			result = fib(n - 1) + fib(n - 2);
 		return result;
 	}
 	
